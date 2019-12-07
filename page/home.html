@@ -1,0 +1,77 @@
+<!--You must give your view a controller name that we will edit later-->
+<!--Please store all views in page folder-->
+<div class="mainContent">
+	<!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+
+	   <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+	   <input type="text" class="form-control search-bar" ng-model="searchText" ng-change="onSearchTextChanged()" id="query" placeholder="Search Projects"/>
+
+    </div>
+    <div class="home-container" ng-hide="search">
+    	<div>
+		<h2>Featured Projects</h2>
+		<div class="row home-project-container">
+			<div ng-repeat="featured in homeModel.featuredProjects" class="col-xs-3 home-project-item" ng-click="onProjectClick(featured)">
+				<img src="{{featured.icon}}" class="img-responsive home-project-image">
+				<div class="thumbnail">
+					<p class="home-p-item">{{featured.name}}</p>
+					<p class="home-p-item">{{featured.category}}</p>
+				</div>
+			</div>
+		</div>
+    	</div>
+
+    	<div>
+		<h3>Newest Projects</h3>
+		<div class="row home-project-container">
+			<div ng-repeat="new in homeModel.newestProjects" class="col-xs-3 home-project-item" ng-click="onProjectClick(new)">
+				<img src="{{new.icon}}" class="img-responsive home-project-image">
+				<div class="thumbnail">
+					<p class="home-p-item">{{new.name}}</p>
+					<p class="home-p-item">{{new.category}}</p>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div>
+		<h3>Most Popular</h3>
+		<div class="row home-project-container">
+			<div ng-repeat="popular in homeModel.popularProjects" class="col-xs-3 home-project-item" ng-click="onProjectClick(popular)">
+				<img src="{{popular.icon}}" class="home-project-image img-responsive home-project-image">
+				<div class="thumbnail">
+					<p class="home-p-item">{{popular.name}}</p>
+					<p class="home-p-item">{{popular.category}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div ng-show="search" class="scroll-container">
+		<div>
+			<h3>Name</h3>
+			<div class="search-project-container">
+				<div ng-repeat="named in homeModel.nameProjects" class="col-xs-3 search-project-item" ng-click="onProjectClick(named)">
+					<img src="{{named.icon}}" class="home-project-image img-responsive">
+					<div class="thumbnail">
+						<p class="home-p-item">{{named.name}}</p>
+						<p class="home-p-item">{{named.category}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>Keyword</h3>
+			<div class="search-project-container">
+				<div ng-repeat="categoried in homeModel.keywordProjects" class="search-project-item col-xs-3" ng-click="onProjectClick(categoried)">
+					<img src="{{categoried.icon}}" class="home-project-image img-responsive">
+					<div class="thumbnail">
+						<p class="home-p-item">{{categoried.name}}</p>
+						<p class="home-p-item">{{categoried.category}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<!--You must give your view a controller name that we will edit later-->
+<!--Please store all views in page folder-->
+<div>
+	<!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+	   <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>    
+    <button id="submit" class="btn btn-info" ng-click="save()">Save</button>
+    </div>
+	<h2>Edit Profile<h2>
+    <div class="form-group">
+		<h3>Username</h3>
+		<input id = "name" class="form-control" ng-model="editProfile.name"></input>
+		<h3>Email</h3>
+		<input id = "email" class="form-control" type="email" ng-model="editProfile.email"></input>
+		<h3 id = "av">Image Upload</h3>
+		<img src="{{profile.icon}}"/>
+	   	<input id="image" type="file" class="form-control" name="icon" accept="image/*" file-model="file">
+		<h3>Password</h3>
+		<input id = "passowrd" class="form-control" ng-model="newPassword"></input>
+		<h3>Re-enter Password</h3>
+		<input id = "password2" class="form-control" ng-model="reEnteredPassword"></input>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div>
+    <!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+       <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+    </div>
+        <div class="scroll-container">  
+            <h1>Approved Profiles</h1>  
+            <div>   
+                <input type="hidden" ng-model="id" /> 
+                <br /><br />  
+                <table class="table table-bordered">  
+                    <tr>  
+                       <th>Name</th>  
+                       <th>Email</th>  
+                       <th>Select</th>  
+                    </tr>  
+                    <tr ng-class="{'active':x.id==project.id}" ng-repeat="x in approvedProfiles" ng-click="setProfile(x)">  
+                       <td>{{x.name}}</td>  
+                       <td>{{x.email}}</td>  
+                       <td><button class="btn btn-info btn-xs">Select</button></td>  
+                    </tr>  
+                </table>   
+            </div>  
+            
+            <h1>Not Approved Profiles</h1>  
+            <div>   
+                <input type="hidden" ng-model="id" /> 
+                <br /><br />  
+                <table class="table table-bordered">  
+                    <tr>  
+                       <th>Name</th>  
+                       <th>Email</th>  
+                       <th>Select</th>  
+                    </tr>  
+                    <tr ng-class="{'active':x.id==project.id}" ng-repeat="x in notApprovedProfiles" ng-click="setProfile(x)">  
+                       <td>{{x.name}}</td>  
+                       <td>{{x.email}}</td>  
+                       <td><button class="btn btn-info btn-xs">Select</button></td>  
+                    </tr>  
+                </table>  
+              </div>
+              <div>
+            <h3>Currently Selected Profile</h3>
+                <h3>{{profile.name}}</h3>
+                <p>{{profile.email}}</p>
+                <button name="btnInsert" class="btn btn-info" ng-click="toggleApprove(profile)">Toggle Approve</button> 
+                <button name="btnInsert" class="btn btn-info" ng-click="delete(profile.id)">Delete</button>  
+            </div> 
+         </div>  
+</div>

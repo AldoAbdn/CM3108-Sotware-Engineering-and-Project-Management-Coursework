@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Campus Funder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Imports-->
+  <!--CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet1.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <!--JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+</head>
+<body ng-app="crowdfundingadminApp" ng-controller="mainCtrl" ng-cloak="">
+    <!--Side Bar-->
+    <section layout="row" class="fill-height-section" flex>
+    <md-sidenav id="AdminSideBar"
+        class="md-sidenav-left"
+        md-component-id="left" md-is-locked-open="$mdMedia('min-width: 796px')" md-whiteframe="4">
+
+        <div id="SideBarNavBar">
+          <button id="btnClose" class="btn btn-info btnSideBarToggle" data-toggle="collapse" ng-click="toggleLeftMenu()">&#10006;</button>
+        </div>
+        <div class="animate-show-hide" ng-include="sideBar.content">
+
+        </div>
+    </md-sidenav>
+    <!--Site Content-->
+    <md-content id="MainContent" class="mainContent" flex layout-padding>
+        <!--Routing View-->
+        <div class="mainContent view" ng-view>
+
+        </div>
+
+    </md-content>
+
+
+  </section>
+<!--Custom JS-->
+<script src="js/models.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

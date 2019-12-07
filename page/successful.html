@@ -1,0 +1,28 @@
+<div>
+    <!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+       <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+    </div>
+        <div class="scroll-container">  
+            <h1>Successful Projects</h1>  
+            <div>   
+                <input type="hidden" ng-model="id" /> 
+                <br /><br />  
+                <table class="table table-bordered">  
+                    <tr>  
+                       <th>Name</th>  
+                       <th>Category</th>  
+                       <th>Select</th>  
+                    </tr>  
+                    <tr ng-class="{'active':x.id==project.id}" ng-repeat="x in successfulProjects" ng-click="setProject(x)">  
+                       <td>{{x.name}}</td>  
+                       <td>{{x.category}}</td>  
+                       <td><button class="btn btn-info btn-xs">Select</button></td>  
+                    </tr>  
+                </table>   
+            </div>  
+            <h3>Currently Selected Project</h3>
+                <h3>{{project.name}}</h3>
+                <p>{{project.category}}</p>
+        </div>  
+</div>

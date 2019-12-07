@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Campus Funder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Imports-->
+  <!--CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet1.css">
+  <!--JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+</head>
+<body ng-app="crowdfundingloginApp" ng-controller="mainCtrl" ng-cloak="">
+  <div class="main-container">
+    <!--Main Content-->
+    <div class="jumbotron half-section center-content">
+      <h1 class="text-center" style="vertical-align: middle">CAMPUS FUNDER</h1>
+    </div>
+    <div class="half-section">
+      <div class="half-section center-content">
+        <h1 class="text-center">EXPLORE. DISCOVER. DONATE</h1>
+      </div>
+      <div class="text-center half-section center-content">
+        <!--Buttons-->
+        <button id="btnLogin" type="button" class="btn-lg" ng-click="openLogin()">Login</button>
+        <span>&nbsp; or &nbsp;</span>
+        <button id="btnSignUp" type="button" class="btn-lg" ng-click="openSignUp()">Sign Up</button>
+        <!--Toggle Modal-->
+        <div id="loginModal" class="modal modal-open login-modal" ng-include="modalView" ng-show="showDialog" ng-click="closeDialog()">
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Personal JS-->
+<script src="js/models.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

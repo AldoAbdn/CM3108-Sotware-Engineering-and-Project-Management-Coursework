@@ -1,0 +1,32 @@
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content zoomIn">
+    <div class="modal-header">
+      <!--Modal Close Button-->
+      <button type="button" class="close" ng-click="closeModal()">&times;</button>
+      <h4 class="modal-title">Login</h4>
+    </div>
+    <div class="modal-body">
+      <div class="half-section center-content">
+        <img src="/img/placeholder.png" alt="Uni Logo Goes Here" class="img-responsive"/>
+      </div>
+      <div class="half-section">   
+        <!--Login Form-->          
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="loginProfile.email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="pwd" placeholder="Password" ng-model="loginProfile.password" required>
+          </div>
+          <div class="button-container center-content">
+            <button id="loginButton" type="button" class="btn-lg" ng-click="login()">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </div>
+</div>

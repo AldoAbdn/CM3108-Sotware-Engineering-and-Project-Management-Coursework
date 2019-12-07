@@ -1,0 +1,32 @@
+<!--You must give your view a controller name that we will edit later-->
+<!--Please store all views in page folder-->
+<div>
+	<!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+	   <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+	   <button id="submit" class="btn btn-info" ng-click="save()">Save</button>
+    </div>
+    <div class="form-group" class="scroll-container">
+		<h3>Name</h3>
+		<input id = "name" class="form-control" ng-model="editProject.name"></input>
+		<h3>Category</h3>
+		<select id = "CategorySelect" class="form-control" ng-model="editProject.category" selected="editProject.category">
+			<option value="sports">General</option>
+  			<option value="biology">Sports</option>
+  			<option value="computer science">Computer Science</option>
+  			<option value="other">Other</option>
+		</select>
+		<h3>Icon Upload</h3>
+	   	<input id="image" type="file" class="form-control" name="icon" accept="image/*" file-model="icon">
+	   	<h3>Image Uploads</h3>
+	   	<input id="image" type="file" class="form-control" name="images" accept="image/*" file-model="images" multiple>
+		<h3>Description</h3>
+		<textarea id = "contentinput"></textarea>
+		<h3>Total</h3>
+		<p>Total: {{editProject.total}}</p>
+		<h3>Goal</h3>
+		<input id = "" class="form-control" ng-model="editProject.goal"></input>
+    </div>
+    <script> $(function() { $('textarea').froalaEditor() }); </script>
+	<h3></h3>
+</div>

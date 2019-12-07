@@ -1,0 +1,28 @@
+<!--Basic Menu-->
+<!--Please store all menus in menu folder-->
+<div>
+  <div id="SideBarImage" class="center-nav">
+  	<img src="{{profile.avatar}}" class="img-responsive img-circle center-nav side-bar-img" alt="Profile Image">
+  </div>
+  <div id="SideBarDescription">
+  	<h3 class="center-nav"></h3>
+  	<p class="center-nav"></p>
+  </div>
+		<ul class="list-group">
+		  <!--Call set page in ng-click to change current view-->
+    <li class="list-group-item center-nav active" ng-click="navigate('/home')">Home</li>
+    <li class="list-group-item center-nav" ng-click="navigate('/profile')">My Account</li>
+		</ul>
+    <div class="bottomMenu" ng-show="categories">
+      <h3 class="center-nav">CATEGORIES</h3>
+    <ul class="list-group center-nav">
+    <!--Call set page-->
+    <li class="list-group-item" ng-class="{'active':category=='all'}" ng-click="setCategory('all')">All</li>
+    <li class="list-group-item" ng-class="{'active':category=='sports'}" ng-click="setCategory('sports')">Sports</li>
+    <li class="list-group-item" ng-class="{'active':category=='biology'}" ng-click="setCategory('biology')">Biology</li>
+    <li class="list-group-item" ng-class="{'active':category=='computer science'}" ng-click="setCategory('computer science')">Computer Science</li>
+    <li class="list-group-item" ng-class="{'active':category=='digital media'}" ng-click="setCategory('digital media')">Digital Media</li>
+    <li class="list-group-item" ng-class="{'active':category=='other'}" ng-click="setCategory('other')">Other</li>
+  </ul>
+  </div>
+ </div>

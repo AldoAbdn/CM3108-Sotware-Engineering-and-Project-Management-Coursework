@@ -1,0 +1,53 @@
+<!--You must give your view a controller name that we will edit later-->
+<!--Please store all views in page folder-->
+<div>
+	<!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+	   <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+	   <button class="btn btn-info" ng-click="edit()">Edit Profile</button>
+	   <button class="btn btn-info" ng-click="addProject()" ng-show="profile.admin != '1'">Add Project</button>
+	   <button class="btn btn-info" ng-click="signOut()">Sign Out</button>
+    </div>
+    <div class="scroll-container">
+		<h1>Profile</h1>
+		<h3>{{profile.name}}</h3>
+		<p>{{profile.email}}</p>
+		<div>
+			<h2 ng-show="profile.admin!='1'">Viewed Projects</h2>
+			<div class="search-project-container" ng-show="profile.admin!='1'">
+				<div ng-repeat="project in profile.viewed" class="search-project-item col-xs-3" ng-click="openProject(project)">
+					<img src="{{project.icon}}" class="home-project-image img-responsive">
+					<div class="thumbnail">
+						<p class="home-p-item">{{project.name}}</p>
+						<p class="home-p-item">{{project.category}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 ng-show="profile.admin!='1'">Donated To</h2>
+			<div class="search-project-container" ng-show="profile.admin!='1'">
+				<div ng-repeat="project in donatedToProjects" class="search-project-item col-xs-3" ng-click="openProject(project)">
+					<img src="{{project.icon}}" class="home-project-image img-responsive">
+					<div class="thumbnail">
+						<p class="home-p-item">{{project.name}}</p>
+						<p class="home-p-item">{{project.category}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 ng-show="profile.admin!='1'">Your Projects</h2>
+			<div class="search-project-container" ng-show="profile.admin!='1'">
+				<div ng-repeat="project in projects" class="search-project-item col-xs-3" ng-click="onProjectClick(project)">
+					<img src="{{project.icon}}" class="home-project-image img-responsive">
+					<div class="thumbnail">
+						<p class="home-p-item">{{project.name}}</p>
+						<p class="home-p-item">{{project.category}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

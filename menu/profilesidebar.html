@@ -1,0 +1,14 @@
+<div>
+  <div id="SideBarImage" class="center-nav">
+    <img src="{{profile.avatar}}" class="img-responsive img-circle center-nav side-bar-img" alt="Profile Image">
+  </div>
+  <div id="SideBarDescription">
+    <h3 class="center-nav"></h3>
+    <p class="center-nav"></p>
+  </div>
+    <ul class="list-group">
+      <!--Call set page in ng-click to change current view-->
+    <li class="list-group-item center-nav" ng-click="navigate('/home')" ng-show="profile.admin!='1'">Home</li>
+    <li class="list-group-item center-nav active" ng-click="navigate('/profile')">My Account</li>
+    </ul>
+ </div>

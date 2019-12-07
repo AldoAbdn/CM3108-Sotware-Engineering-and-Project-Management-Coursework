@@ -1,0 +1,311 @@
+body,html,#Main-Content {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+/*General Classes*/
+.main-container, .mainContent{
+	/*Main Container for each page*/
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.center-content{
+	/*container that vertically and hoizontally centers content*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.half-section {
+	/*Half full height section, used to make view half and half*/
+	height: 50%;
+	width: 100%;
+	margin: 0;
+}
+
+.fill-height-section{
+	/*Full height section*/
+	height: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+.fill-width {
+	width:100%;
+}
+
+.radio-button{
+	text-align: center !important; 
+}
+
+/*Project Classes*/
+.description {
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+}
+.donate-form{
+	display: inline-block;
+}
+.project-img {
+	height: 7vh;
+}
+
+/*Login Classes*/
+#btnLogin, #btnSignUp {
+	/*For login and sign up buttons on first page so that they are same size*/
+	min-width: 100px;
+}
+/*Modal classes for login*/
+.login-modal.in {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-modal>.modal-dialog {
+	height: 80%;
+}
+
+.login-modal>.modal-dialog .modal-content {
+	height: 100%;
+	overflow: hidden;
+}
+
+.login-modal>.modal-dialog .modal-content label {
+	text-align: left;
+	display: block;
+}
+
+.login-modal>.modal-dialog .modal-body {
+	height: 87%;
+}
+
+.login-modal>.modal-dialog .modal-body form {
+	height: 100%;
+}
+.button-container {
+	height: 50%;
+}
+
+/*Main Page Classes*/
+/*Side Bar*/
+.bottomMenu {
+	/*Add this inside of a menu file, to allow list of items in bottom of side bar*/
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#SideBar{
+	overflow: hidden;
+	margin: 0;
+	background-image:url("img/placeholder.png");
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#AdminSideBar{
+	overflow: hidden;
+	margin: 0;
+	background-image:url("img/placeholder.png");
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: 50% 75%;
+}
+.side-bar-img{
+	height: 20vh;
+	width:100%;
+}
+#SideBarColumn {
+	overflow: hidden;
+	max-height: 100%;
+	opacity: 1;
+	border-right: 2px solid black;
+	box-shadow: 10px 0px 40px #888888;
+}
+#SideBarContent,.sideBarContent {
+	min-height: 100%;
+	height: 100%;
+	min-width: 100%;
+	width: 100%;
+}
+#SideBarNavBar {
+	height: auto;
+}
+#btnClose {
+	float:right;
+	
+}
+.nav-link:link,.nav-link:visited,.nav-link:hover,.nav-link:active{
+	text-decoration: none;
+	color:inherit;
+}
+
+
+/*Centers text in side bar*/
+.center-nav {
+	text-align: center;
+}
+/*Centers round image in navbar and adds padding*/
+.img-responsive.centerNav{
+	margin:0 auto;
+	padding: 10px;
+}
+
+/*Transitions for nav bars that only appear on mobile screen width*/
+#btnHamburger, #SideBarNavBar {
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.2s linear;
+}
+.search-bar{
+	margin-top:10px;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 768px) {
+	.home-project-container{
+		justify-content: center;
+		height: auto;
+	}
+	#SideBar{
+		overflow: hidden;
+		margin: 0;
+		background-image:url("img/placeholder.png");
+		background-size:25% 5%;
+		background-repeat: no-repeat;
+		background-position: 50% 47.5%;
+	}
+	#SideBarNavBar, #btnHamburger{
+		opacity: 1;
+		transition: opacity 0.2s linear;
+	}
+	.home-p-item:first-child{
+		font-weight: bold;
+		font-size: 10px;
+	}
+	.home-p-item{
+		margin: 0;
+		font-size: 8px;
+	}
+	#AdminSideBar{
+		overflow: hidden;
+		margin: 0;
+		background-image:url("img/placeholder.png");
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+}
+
+/*Animations*/
+.zoomIn {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.slideIn {
+	z-index: 1;
+	-webkit-transition: width 2s;
+	transition: width 2s;
+}
+@keyframes animateslide {
+	from:{width: 0%;opacity: 0}
+	to:{width:100%; opacity: 1}
+}
+.animate-show-hide{
+
+}
+/*View*/
+.view {
+	height: 100%;
+}
+.view.ng-enter {
+  transition: 1s linear all;
+  opacity: 0;
+}
+.view.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.view.ng-leave {
+  transition: 1s linear all;
+  opacity: 1;
+}
+.view.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/*HOME*/
+.scroll-container{
+	height: 90vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.home-container{
+	display: flex;
+	height: 85%;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.home-project-container,.search-project-container{
+	display: flex;
+	flex:1;
+	padding: 20px;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+
+}
+.home-project-item,.search-project-item{
+	flex-shrink: 1;
+	height: 100%;
+	padding:1px;
+	max-height: 100%;
+	height: 10vh;
+}
+.home-project-image{
+	width: 100%;
+	height: 100%;
+}
+.home-p-container{
+	display: flex;
+	flex-direction: column;
+	height:70%;
+	justify-content: top;
+	align-items: left;
+}
+.home-p-item:first-child{
+	font-weight: bold;
+}
+.home-p-item{
+	margin: 0;
+}
+.thumbnail {
+	overflow: hidden;
+	white-space: nowrap;
+}
+.search-project {
+	height: 100%;
+}
+.search-project-item{
+	margin-bottom: 10vh;
+}
+.project-image{
+	flex-shrink: 0;
+}
+.modal {
+	display: block;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+<div>
+    <!--Your Views must contain the nav bar below that you can add to-->
+    <div id="MainContentNavBar">
+       <button id="btnHamburger" class="btn btn-info btnSideBarToggle" ng-click="toggleLeftMenu()">&#9776;</button>
+    </div>
+        <div class="scroll-container">  
+            <h1>Donations</h1>  
+            <div>   
+                <input type="hidden" ng-model="id" /> 
+                <br /><br />  
+                <table class="table table-bordered">  
+                    <tr>  
+                       <th>Project Name</th>  
+                       <th>User Name</th> 
+                       <th>User Email</th>
+                       <th>Amount Donated</th>
+                       <th>PayPal Trans Code</th> 
+                       <th>Select</th>  
+                    </tr>  
+                    <tr ng-class="{'active':x.id==project.id}" ng-repeat="x in donations" ng-click="setDonation(x)">  
+                       <td>{{x.projectName}}</td>  
+                       <td>{{x.username}}</td>  
+                       <td>{{x.userEmail}}</td>  
+                       <td>{{x.amount}}</td> 
+                       <td>{{x.trans}}</td>
+                       <td><button class="btn btn-info btn-xs">Select</button></td>  
+                    </tr>  
+                </table>   
+            </div>  
+            <h3>Currently Selected Donation</h3>
+                <h3>{{donation.projectName}}</h3>
+                <p>{{donation.username}}</p>
+                <p>{{donation.userEmail}}</p>
+                <p>{{donation.amount}}</p>
+                <p>{{donation.trans}}</p>
+            </div>  
+</div>
